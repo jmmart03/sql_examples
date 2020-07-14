@@ -1,4 +1,9 @@
-create procedure dbo.store_tweer
+--this script creates a stored procedure that stores tweets in the database
+--the sproc is called by a python script upstream that gets the tweet data
+--if the tweet record exists, update the record with new like/fav counts
+--otherwise, insert the new tweet data
+
+create procedure dbo.store_tweet
 	@tweet_text varchar(max)
 	,@tweet_score int
 	,@favorite_count int
